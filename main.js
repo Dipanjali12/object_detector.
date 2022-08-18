@@ -11,9 +11,6 @@ function preload() {
 function setup() {
     canvas = createCanvas(550, 350);
     canvas.center();
-    video=createCapture(VIDEO);
-    video.size(550,350);
-    video.hide();
    
 }
 
@@ -23,7 +20,7 @@ function start(){
 }
 
 function draw() {
-    image(video, 0, 0, 550, 350);
+    image(img, 0, 0, 550, 350);
     if (status) {
         for(var i=0;i<objects.length;i++){
         document.getElementById("status").innerHTML = "Status : Object  Detected"
@@ -40,7 +37,7 @@ function draw() {
 
 function modelLoaded() {
     console.log("modelLoaded");
-    objectDetector.detect(video, gotResult);
+    objectDetector.detect(img, gotResult);
 
 }
 
